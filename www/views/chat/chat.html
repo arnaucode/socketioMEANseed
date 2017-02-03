@@ -1,18 +1,23 @@
-<md-content class="md-padding">
-<md-toolbar layout="row" class="o_purple300">
+<md-toolbar layout="row" class="o_bBlueDark" style="top:0; position:fixed;">
     <div class="md-toolbar-tools">
         <span>chat</span>
     </div>
 </md-toolbar>
-<form>
-    <input id="m" ng-model="msg.text" /><button ng-click="send()">Send</button>
-</form>
-
-<md-list flex>
-    <md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>
-
-    <md-list-item ng-repeat="msg in msgs" ng-click="null">
-        <p>{{msg.text}}</p>
-    </md-list-item>
-</md-list>
+<md-content class="md-padding chat_backgroundImg" style="margin-top: 50px;">
+    <md-list flex>
+        <md-list-item ng-repeat="msg in msgs" ng-click="null">
+            <p>{{msg.text}}</p>
+            <div class="md-secondary">{{msg.date | date:"HH:mm"}}h</div>
+        </md-list-item>
+    </md-list>
 </md-content>
+
+<md-toolbar layout="row" class="o_grey300" style="bottom:0; position:fixed;">
+    <div class="md-toolbar-tools">
+        <md-input-container md-no-float class="md-block" flex>
+            <input ng-model="msg.text" placeholder="Write a message..."
+            ng-keyup="$event.keyCode == 13 ? send() : null">
+          </md-input-container>
+          <md-button class="md-raised" ng-click="send()">Send</md-button>
+    </div>
+</md-toolbar>

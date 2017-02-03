@@ -24,6 +24,7 @@ io.on('connection', function(socket){
 
   socket.on('msg', function (data, callback){
 		console.log("msg");
+        data.date= new Date();
 		io.sockets.emit('newmsg', data); //aqí envia la data
 	});
 });

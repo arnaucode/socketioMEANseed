@@ -3,6 +3,7 @@
 angular.module('app', [
         'ngRoute',
         'btford.socket-io',
+        'ngMaterial',
         'app.chat'
     ])
     .factory('socket', function(socketFactory) {
