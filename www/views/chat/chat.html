@@ -1,0 +1,18 @@
+<md-content class="md-padding">
+<md-toolbar layout="row" class="o_purple300">
+    <div class="md-toolbar-tools">
+        <span>chat</span>
+    </div>
+</md-toolbar>
+<form>
+    <input id="m" ng-model="msg.text" /><button ng-click="send()">Send</button>
+</form>
+
+<md-list flex>
+    <md-subheader class="md-no-sticky">3 line item (with hover)</md-subheader>
+
+    <md-list-item ng-repeat="msg in msgs" ng-click="null">
+        <p>{{msg.text}}</p>
+    </md-list-item>
+</md-list>
+</md-content>

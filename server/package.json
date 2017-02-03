@@ -1,0 +1,9 @@
+{
+  "name": "socketioMEANseed",
+  "version": "0.0.1",
+  "description": "socketioMEANseed project",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.7.2"
+  }
+}
